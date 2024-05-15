@@ -1,5 +1,5 @@
 {
-  "name": "saveinn",
+  "name": "piggy-bank",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hsnfwz/saveinn.git"
+    "url": "git+https://github.com/hsnfwz/piggy-bank.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hsnfwz/saveinn/issues"
+    "url": "https://github.com/hsnfwz/piggy-bank/issues"
   },
-  "homepage": "https://github.com/hsnfwz/saveinn#readme",
+  "homepage": "https://github.com/hsnfwz/piggy-bank#readme",
   "devDependencies": {
     "nodemon": "^2.0.19"
   },
