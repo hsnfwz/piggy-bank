@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body, html {
+    font-family: 'Lato', sans-serif;
+}
+
+.saveinn-green-btn {
+    background-color: #63D3A9;
+    color: white;
+    font-weight: bold;
+    border: solid 2px #63d3a9;
+    margin: 2px;
+}
+
+.saveinn-green-btn:hover {
+    background-color: white;
+    color: black;
+    border: solid 2px #63D3A9;
+}
+
+.saveinn-green-btn:disabled {
+    background-color: #63D3A9;
+    border: solid 2px #63d3a9;
+}
+
+.saveinn-blue-btn {
+    background-color: #758ECD;
+    color: white;
+    font-weight: bold;
+    border: solid 2px #758ecd;
+    margin: 2px;
+}
+
+.saveinn-blue-btn:hover {
+    background-color: white;
+    color: black;
+    border: solid 2px #758ECD;
+}
+
+.saveinn-blue-btn:disabled {
+    background-color: #758ECD;
+    border: solid 2px #758ecd;
+}
+
+.saveinn-red-btn {
+    background-color: #cd7575;
+    color: white;
+    font-weight: bold;
+    border: solid 2px #cd7575;
+    margin: 2px;
+}
+
+.saveinn-red-btn:hover {
+    background-color: white;
+    color: black;
+    border: solid 2px #cd7575;
+}
+
+.saveinn-red-btn:disabled {
+    background-color: #cd7575;
+    border: solid 2px #cd7575;
+}
+
+.brand-logo {
+    color: #63D3A9;
+    font-weight: bolder;
+}
+
+.question {
+    border: solid 2px #41403E;
+}
+
+.center-all {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
