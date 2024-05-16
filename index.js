@@ -32,7 +32,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, '/app/build')));
 
 // app - middleware
-app.use(cors({ origin: ['http://localhost:3000', 'https://piggy-bank-server.onrender.com'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:3000', 'https://piggy-bank-client.onrender.com'], credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
