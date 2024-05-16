@@ -6,6 +6,8 @@ import { Container, Row, Col, ListGroup, Button, Modal, Form, Navbar } from 'rea
 import saveInnLogo from '../assets/images/saveInnLogo.svg';
 import userIcon from '../assets/images/userIcon.svg';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function BudgetMemberAccountInfo({ auth }) {
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -32,7 +34,7 @@ function BudgetMemberAccountInfo({ auth }) {
 
   async function handleRefresh() {
     try {
-      const endpoint = `http://localhost:5000/budget_member/${auth.user.budgetMemberId}`;
+      const endpoint = `${SERVER}/budget_member/${auth.user.budgetMemberId}`;
 
       const options = {
         method: 'GET',
@@ -42,7 +44,7 @@ function BudgetMemberAccountInfo({ auth }) {
       const res = await fetch(endpoint, options);
       const data = await res.json();
 
-      const endpoint2 = `http://localhost:5000/saveinn_user/${auth.user.saveinnUserId}`;
+      const endpoint2 = `${SERVER}/saveinn_user/${auth.user.saveinnUserId}`;
 
       const res2 = await fetch(endpoint2, options);
       const data2 = await res2.json();
@@ -62,7 +64,7 @@ function BudgetMemberAccountInfo({ auth }) {
 
   async function handleEditInfo() {
     try {
-      const endpoint = `http://localhost:5000/budget_member/${auth.user.budgetMemberId}`;
+      const endpoint = `${SERVER}/budget_member/${auth.user.budgetMemberId}`;
 
       const body = {
         firstName,
@@ -93,7 +95,7 @@ function BudgetMemberAccountInfo({ auth }) {
 
   async function handleEditUsername() {
     try {
-      const endpoint = `http://localhost:5000/saveinn_user/update_username/${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/saveinn_user/update_username/${auth.user.saveinnUserId}`;
 
       const body = {
         username,
@@ -125,7 +127,7 @@ function BudgetMemberAccountInfo({ auth }) {
 
   async function handleEditEmail() {
     try {
-      const endpoint = `http://localhost:5000/saveinn_user/update_email/${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/saveinn_user/update_email/${auth.user.saveinnUserId}`;
 
       const body = {
         email,
@@ -157,7 +159,7 @@ function BudgetMemberAccountInfo({ auth }) {
 
   async function handleEditPassword() {
     try {
-      const endpoint = `http://localhost:5000/saveinn_user/update_password/${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/saveinn_user/update_password/${auth.user.saveinnUserId}`;
 
       const body = {
         password,
@@ -189,7 +191,7 @@ function BudgetMemberAccountInfo({ auth }) {
 
   async function handleDelete() {
     try {
-      const endpoint = `http://localhost:5000/budget_member/${auth.user.budgetMemberId}`;
+      const endpoint = `${SERVER}/budget_member/${auth.user.budgetMemberId}`;
 
       const options = {
         method: 'DELETE',

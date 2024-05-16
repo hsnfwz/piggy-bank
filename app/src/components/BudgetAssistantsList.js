@@ -7,6 +7,8 @@ import saveInnLogo from '../assets/images/saveInnLogo.svg';
 import userIcon from '../assets/images/userAssistantIcon.svg';
 import membersIcon from '../assets/images/assistantIcon.svg'
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function BudgetAssistantsList({ auth }) {
   const [budgetAssistantRecords, setBudgetAssistantRecords] = useState([]);
 
@@ -18,7 +20,7 @@ function BudgetAssistantsList({ auth }) {
 
   async function handleRefresh() {
     try {
-      const endpoint = 'http://localhost:5000/budget_assistant';
+      const endpoint = `${SERVER}/budget_assistant`;
 
       const options = {
         method: 'GET',

@@ -11,6 +11,8 @@ import creditCardIconBlue from '../assets/images/creditCardIconBlue.svg';
 // helpers
 import { currencyFormat } from '../helpers';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function ExpenseTransactionsList() {
   const auth = useContext(AuthContext);
 
@@ -36,7 +38,7 @@ function ExpenseTransactionsList() {
 
   async function handleRefresh() {
     try {
-      const endpoint = `http://localhost:5000/spend_expense?saveinnUserId=${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/spend_expense?saveinnUserId=${auth.user.saveinnUserId}`;
 
       const options = {
         method: 'GET',
@@ -56,7 +58,7 @@ function ExpenseTransactionsList() {
 
   async function handleAdd() {
     try {
-      const endpoint = 'http://localhost:5000/spend_expense';
+      const endpoint = `${SERVER}/spend_expense`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -87,7 +89,7 @@ function ExpenseTransactionsList() {
 
   async function handleEdit() {
     try {
-      const endpoint = `http://localhost:5000/spend_expense/${expenseId}`;
+      const endpoint = `${SERVER}/spend_expense/${expenseId}`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -118,7 +120,7 @@ function ExpenseTransactionsList() {
 
   async function handleDelete(_expenseId) {
     try {
-      const endpoint = `http://localhost:5000/spend_expense/${_expenseId}`;
+      const endpoint = `${SERVER}/spend_expense/${_expenseId}`;
 
       const options = {
         method: 'DELETE',
@@ -136,7 +138,7 @@ function ExpenseTransactionsList() {
 
   async function handleSum() {
     try {
-      const endpoint = `http://localhost:5000/spend_expense/sum?saveinnUserId=${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/spend_expense/sum?saveinnUserId=${auth.user.saveinnUserId}`;
 
       const options = {
         method: 'GET',
@@ -154,7 +156,7 @@ function ExpenseTransactionsList() {
 
   async function handleAverageByCategory() {
     try {
-      const endpoint = `http://localhost:5000/spend_expense/average_by_category?saveinnUserId=${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/spend_expense/average_by_category?saveinnUserId=${auth.user.saveinnUserId}`;
 
       const options = {
         method: 'GET',

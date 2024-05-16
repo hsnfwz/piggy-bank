@@ -65,4 +65,4 @@ app.use('/user_belongs_to_group', userBelongsToGroupRoutes);
 
 // app - run
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

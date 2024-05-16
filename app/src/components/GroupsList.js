@@ -9,6 +9,8 @@ import userAssistantIcon from '../assets/images/userAssistantIcon.svg';
 import membersIcon from '../assets/images/membersIcon.svg';
 import communityIcon from '../assets/images/communityIcon.svg';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function GroupsList({ auth }) {
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -30,7 +32,7 @@ function GroupsList({ auth }) {
 
   async function handleRefresh() {
     try {
-      const endpoint = 'http://localhost:5000/user_group';
+      const endpoint = `${SERVER}/user_group`;
 
       const options = {
         method: 'GET',
@@ -50,7 +52,7 @@ function GroupsList({ auth }) {
 
   async function handleAdd() {
     try {
-      const endpoint = 'http://localhost:5000/user_group';
+      const endpoint = `${SERVER}/user_group`;
 
       const body = {
         name,
@@ -72,7 +74,7 @@ function GroupsList({ auth }) {
 
       const userGroupId = data.row.userGroupId;
 
-      const endpoint2 = 'http://localhost:5000/user_belongs_to_group';
+      const endpoint2 = `${SERVER}/user_belongs_to_group`;
 
       const body2 = {
         userGroupId,
@@ -100,7 +102,7 @@ function GroupsList({ auth }) {
 
   async function handleEdit() {
     try {
-      const endpoint = `http://localhost:5000/user_group/${groupId}`;
+      const endpoint = `${SERVER}/user_group/${groupId}`;
 
       const body = {
         name,
@@ -129,7 +131,7 @@ function GroupsList({ auth }) {
 
   async function handleDelete(_groupId) {
     try {
-      const endpoint = `http://localhost:5000/user_group/${_groupId}`;
+      const endpoint = `${SERVER}/user_group/${_groupId}`;
 
       const options = {
         method: 'DELETE',
@@ -147,7 +149,7 @@ function GroupsList({ auth }) {
 
   async function handleUsersInAllGroups() {
     try {
-      const endpoint = 'http://localhost:5000/saveinn_user/user/users_in_all_groups';
+      const endpoint = `${SERVER}/saveinn_user/user/users_in_all_groups`;
 
       const options = {
         method: 'GET',
@@ -158,7 +160,7 @@ function GroupsList({ auth }) {
       const data = await res.json();
 
       if (data.rows[0]) {
-        const endpoint2 = data.rows[0].budgetMemberId ? `http://localhost:5000/budget_member/${data.rows[0].budgetMemberId}` : `http://localhost:5000/budget_assistant/${data.rows[0].budgetAssistantId}`;
+        const endpoint2 = data.rows[0].budgetMemberId ? `${SERVER}/budget_member/${data.rows[0].budgetMemberId}` : `${SERVER}/budget_assistant/${data.rows[0].budgetAssistantId}`;
 
         const res2 = await fetch(endpoint2, options);
         const data2 = await res2.json();

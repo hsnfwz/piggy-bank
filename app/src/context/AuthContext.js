@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 export const AuthContext = createContext();
 
 export default function AuthProvider({ children }) {
@@ -12,7 +14,7 @@ export default function AuthProvider({ children }) {
   useEffect(() => {
     (async function() {
       try {
-        const endpoint = 'http://localhost:5000/saveinn_user/user/auth';
+        const endpoint = `${SERVER}/saveinn_user/user/auth`;
 
         const options = {
           method: 'GET',
@@ -33,7 +35,7 @@ export default function AuthProvider({ children }) {
 
   async function signIn(email, password) {
     try {
-      const endpoint = 'http://localhost:5000/saveinn_user/user/sign_in';
+      const endpoint = `${SERVER}/saveinn_user/user/sign_in`;
 
       const body = {
         email,
@@ -61,7 +63,7 @@ export default function AuthProvider({ children }) {
 
   async function signOut() {
     try {
-      const endpoint = 'http://localhost:5000/saveinn_user/user/sign_out';
+      const endpoint = `${SERVER}/saveinn_user/user/sign_out`;
 
       const options = {
         method: 'DELETE',

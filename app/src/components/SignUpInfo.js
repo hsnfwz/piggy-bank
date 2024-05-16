@@ -5,6 +5,8 @@ import { Container, Row, Col, Navbar, Button, Form } from 'react-bootstrap';
 // images
 import saveInnLogo from '../assets/images/saveInnLogo.svg';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function SignUpInfo({ auth }) {
     const [isAssistant, setIsAssistant] = useState(false);
     const [firstName, setFirstName] = useState('');
@@ -35,7 +37,7 @@ function SignUpInfo({ auth }) {
 
     async function handleSignUp() {
         try {
-            const endpoint = isAssistant ? 'http://localhost:5000/budget_assistant' : 'http://localhost:5000/budget_member';
+            const endpoint = isAssistant ? `${SERVER}/budget_assistant` : `${SERVER}/budget_member`;
       
             const body = isAssistant
                 ? {
@@ -64,7 +66,7 @@ function SignUpInfo({ auth }) {
             const res = await fetch(endpoint, options);
             const data = await res.json();
 
-            const endpoint2 = 'http://localhost:5000/saveinn_user';
+            const endpoint2 = `${SERVER}/saveinn_user`;
 
             const body2 = {
                 username,

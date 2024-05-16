@@ -7,6 +7,8 @@ import moment from 'moment';
 import saveInnLogo from '../assets/images/saveInnLogo.svg';
 import questionsIcon from '../assets/images/faqIcon.svg';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function QuestionsList({ auth }) {
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -25,7 +27,7 @@ function QuestionsList({ auth }) {
 
   async function handleRefresh() {
     try {
-      const endpoint = 'http://localhost:5000/ask_question';
+      const endpoint = `${SERVER}/ask_question`;
 
       const options = {
         method: 'GET',
@@ -43,7 +45,7 @@ function QuestionsList({ auth }) {
 
   async function handleAdd() {
     try {
-      const endpoint = 'http://localhost:5000/ask_question';
+      const endpoint = `${SERVER}/ask_question`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -72,7 +74,7 @@ function QuestionsList({ auth }) {
 
   async function handleEdit() {
     try {
-      const endpoint = `http://localhost:5000/ask_question/${questionId}`;
+      const endpoint = `${SERVER}/ask_question/${questionId}`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -101,7 +103,7 @@ function QuestionsList({ auth }) {
 
   async function handleDelete(_questionId) {
     try {
-      const endpoint = `http://localhost:5000/ask_question/${_questionId}`;
+      const endpoint = `${SERVER}/ask_question/${_questionId}`;
 
       const options = {
         method: 'DELETE',

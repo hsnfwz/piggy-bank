@@ -7,6 +7,8 @@ import moment from 'moment';
 import saveInnLogo from '../assets/images/saveInnLogo.svg';
 import planIcon from '../assets/images/plan.svg';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function BudgetPlansList({ auth }) {
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -27,7 +29,7 @@ function BudgetPlansList({ auth }) {
 
   async function handleRefresh() {
     try {
-      const endpoint = 'http://localhost:5000/plan_budget_plan';
+      const endpoint = `${SERVER}/plan_budget_plan`;
 
       const options = {
         method: 'GET',
@@ -45,7 +47,7 @@ function BudgetPlansList({ auth }) {
 
   async function handleAdd() {
     try {
-      const endpoint = 'http://localhost:5000/plan_budget_plan';
+      const endpoint = `${SERVER}/plan_budget_plan`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -76,7 +78,7 @@ function BudgetPlansList({ auth }) {
 
   async function handleEdit() {
     try {
-      const endpoint = `http://localhost:5000/plan_budget_plan/${budgetPlanId}`;
+      const endpoint = `${SERVER}/plan_budget_plan/${budgetPlanId}`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -107,7 +109,7 @@ function BudgetPlansList({ auth }) {
 
   async function handleDelete(_budgetPlanId) {
     try {
-      const endpoint = `http://localhost:5000/plan_budget_plan/${_budgetPlanId}`;
+      const endpoint = `${SERVER}/plan_budget_plan/${_budgetPlanId}`;
 
       const options = {
         method: 'DELETE',

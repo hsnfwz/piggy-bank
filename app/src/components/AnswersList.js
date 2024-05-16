@@ -6,6 +6,8 @@ import moment from 'moment';
 // images
 import questionsIcon from '../assets/images/faqIcon.svg';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+ 
 function AnswersList({ auth }) {
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -29,8 +31,8 @@ function AnswersList({ auth }) {
     const askQuestionId = location.pathname.split('/')[2];
 
     try {
-      const endpoint1 = `http://localhost:5000/ask_question/${askQuestionId}`;
-      const endpoint2 = `http://localhost:5000/answer?askQuestionId=${askQuestionId}`;
+      const endpoint1 = `${SERVER}/ask_question/${askQuestionId}`;
+      const endpoint2 = `${SERVER}/answer?askQuestionId=${askQuestionId}`;
 
       const options = {
         method: 'GET',
@@ -54,7 +56,7 @@ function AnswersList({ auth }) {
     const askQuestionId = location.pathname.split('/')[2];
 
     try {
-      const endpoint = 'http://localhost:5000/answer';
+      const endpoint = `${SERVER}/answer`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -86,7 +88,7 @@ function AnswersList({ auth }) {
     const askQuestionId = location.pathname.split('/')[2];
 
     try {
-      const endpoint = `http://localhost:5000/answer/${answerId}`;
+      const endpoint = `${SERVER}/answer/${answerId}`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -116,7 +118,7 @@ function AnswersList({ auth }) {
 
   async function handleDelete(_answerId) {
     try {
-      const endpoint = `http://localhost:5000/answer/${_answerId}`;
+      const endpoint = `${SERVER}/answer/${_answerId}`;
 
       const options = {
         method: 'DELETE',

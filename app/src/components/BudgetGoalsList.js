@@ -10,6 +10,8 @@ import { currencyFormat } from '../helpers';
 import saveInnLogo from '../assets/images/saveInnLogo.svg';
 import planIcon from '../assets/images/plan.svg';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function BudgetGoalsList({ auth }) {
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -35,7 +37,7 @@ function BudgetGoalsList({ auth }) {
     const planBudgetPlanId = location.pathname.split('/')[2];
 
     try {
-      const endpoint = `http://localhost:5000/plan_has_goal?planBudgetPlanId=${planBudgetPlanId}`;
+      const endpoint = `${SERVER}/plan_has_goal?planBudgetPlanId=${planBudgetPlanId}`;
 
       const options = {
         method: 'GET',
@@ -55,7 +57,7 @@ function BudgetGoalsList({ auth }) {
     const budgetPlanId = location.pathname.split('/')[2];
 
     try {
-      const endpoint = 'http://localhost:5000/set_budget_goal';
+      const endpoint = `${SERVER}/set_budget_goal`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -78,7 +80,7 @@ function BudgetGoalsList({ auth }) {
       const res = await fetch(endpoint, options);
       const data = await res.json();
 
-      const endpoint2 = 'http://localhost:5000/plan_has_goal';
+      const endpoint2 = `${SERVER}/plan_has_goal`;
 
       const body2 = {
         planBudgetPlanId: budgetPlanId,
@@ -106,7 +108,7 @@ function BudgetGoalsList({ auth }) {
 
   async function handleEdit() {
     try {
-      const endpoint = `http://localhost:5000/set_budget_goal/${budgetGoalId}`;
+      const endpoint = `${SERVER}/set_budget_goal/${budgetGoalId}`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -138,7 +140,7 @@ function BudgetGoalsList({ auth }) {
 
   async function handleDelete(_budgetGoalId) {
     try {
-      const endpoint = `http://localhost:5000/set_budget_goal/${_budgetGoalId}`;
+      const endpoint = `${SERVER}/set_budget_goal/${_budgetGoalId}`;
 
       const options = {
         method: 'DELETE',

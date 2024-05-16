@@ -7,6 +7,8 @@ import userIcon from '../assets/images/userIcon.svg';
 import userAssistantIcon from '../assets/images/userAssistantIcon.svg';
 import communityIcon from '../assets/images/communityIcon.svg';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function GroupMembersList({ auth }) {
   const [showAddModal, setShowAddModal] = useState(false);
 
@@ -26,7 +28,7 @@ function GroupMembersList({ auth }) {
     const userGroupId = location.pathname.split('/')[2];
 
     try {
-      const endpoint = `http://localhost:5000/user_belongs_to_group?userGroupId=${userGroupId}`;
+      const endpoint = `${SERVER}/user_belongs_to_group?userGroupId=${userGroupId}`;
 
       const options = {
         method: 'GET',
@@ -38,8 +40,8 @@ function GroupMembersList({ auth }) {
 
       if (data.rows[0]) {
         const endpoint2 = data.rows[0].budgetMemberId
-        ? `http://localhost:5000/budget_member/${data.rows[0].budgetMemberId}`
-        : `http://localhost:5000/budget_assistant/${data.rows[0].budgetAssistantId}`
+        ? `${SERVER}/budget_member/${data.rows[0].budgetMemberId}`
+        : `${SERVER}/budget_assistant/${data.rows[0].budgetAssistantId}`
 
         const res2 = await fetch(endpoint2, options);
         const data2 = await res2.json();
@@ -61,7 +63,7 @@ function GroupMembersList({ auth }) {
     const userGroupId = location.pathname.split('/')[2];
 
     try {
-      const endpoint = `http://localhost:5000/user_belongs_to_group/${userGroupId}/${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/user_belongs_to_group/${userGroupId}/${auth.user.saveinnUserId}`;
 
       const options = {
         method: 'DELETE',

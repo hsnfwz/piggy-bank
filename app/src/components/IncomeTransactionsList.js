@@ -11,6 +11,8 @@ import creditCardIconGreen from '../assets/images/creditCardIconGreen.svg';
 // helpers
 import { currencyFormat } from '../helpers';
 
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+
 function IncomeTransactionsList() {
   const auth = useContext(AuthContext);
 
@@ -36,7 +38,7 @@ function IncomeTransactionsList() {
 
   async function handleRefresh() {
     try {
-      const endpoint = `http://localhost:5000/earn_income?saveinnUserId=${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/earn_income?saveinnUserId=${auth.user.saveinnUserId}`;
 
       const options = {
         method: 'GET',
@@ -56,7 +58,7 @@ function IncomeTransactionsList() {
 
   async function handleAdd() {
     try {
-      const endpoint = 'http://localhost:5000/earn_income';
+      const endpoint = `${SERVER}/earn_income`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -87,7 +89,7 @@ function IncomeTransactionsList() {
 
   async function handleEdit() {
     try {
-      const endpoint = `http://localhost:5000/earn_income/${incomeId}`;
+      const endpoint = `${SERVER}/earn_income/${incomeId}`;
 
       const body = {
         saveinnUserId: auth.user.saveinnUserId,
@@ -118,7 +120,7 @@ function IncomeTransactionsList() {
 
   async function handleDelete(_incomeId) {
     try {
-      const endpoint = `http://localhost:5000/earn_income/${_incomeId}`;
+      const endpoint = `${SERVER}/earn_income/${_incomeId}`;
 
       const options = {
         method: 'DELETE',
@@ -136,7 +138,7 @@ function IncomeTransactionsList() {
 
   async function handleSum() {
     try {
-      const endpoint = `http://localhost:5000/earn_income/sum?saveinnUserId=${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/earn_income/sum?saveinnUserId=${auth.user.saveinnUserId}`;
 
       const options = {
         method: 'GET',
@@ -154,7 +156,7 @@ function IncomeTransactionsList() {
 
   async function handleAverageByCategory() {
     try {
-      const endpoint = `http://localhost:5000/earn_income/average_by_category?saveinnUserId=${auth.user.saveinnUserId}`;
+      const endpoint = `${SERVER}/earn_income/average_by_category?saveinnUserId=${auth.user.saveinnUserId}`;
 
       const options = {
         method: 'GET',
