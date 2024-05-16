@@ -1,9 +1,8 @@
-# Save Inn
-CMPT 354 Group 23.
+# Piggy Bank
 
-Developed by Hussein Fawaz, Juan Antonio Gonzalez, and Mohammad Ziaei.
+Developed by Hussein Fawaz
 
-Published on Auguest 1, 2022.
+Published on May 15, 2024
 
 # Tech Stack
 React + Node + PostgreSQL
