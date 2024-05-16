@@ -23,6 +23,8 @@ export default function AuthProvider({ children }) {
   
         const res = await fetch(endpoint, options);
         const data = await res.json();
+
+        console.log('auth', data);
   
         setUser(data.user);
         setAuthMessage(data.message);
@@ -54,6 +56,8 @@ export default function AuthProvider({ children }) {
       const res = await fetch(endpoint, options);
       const data = await res.json();
 
+      console.log('sign in', data);
+
       setUser(data.user);
       setSignInMessage(data.message);
     } catch(error) {
@@ -72,6 +76,8 @@ export default function AuthProvider({ children }) {
 
       const res = await fetch(endpoint, options);
       const data = await res.json();
+
+      console.log('sign out', data);
 
       setUser(data.user);
       setSignOutMessage(data.message);

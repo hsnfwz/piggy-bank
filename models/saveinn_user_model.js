@@ -137,7 +137,7 @@ SaveinnUserModel.auth = async (req) => {
   try {
     let user = undefined;
     if (req.session && req.session.user) user = req.session.user;
-    return { message: 'Authenticated', user };
+    return { message: user ? 'Authenticated' : 'Unauthenticated', user };
   } catch(error) {
     return { message: error, user };
   }
