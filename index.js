@@ -45,8 +45,8 @@ app.use(expressSession({
   cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 },
 }));
 
-app.get('/', () => {
-  return { message: 'Welcome to Piggy Bank Server' };
+app.get('/', (req, res, next) => {
+  res.json({ message: 'Welcome to Piggy Bank Server' });
 });
 
 // app - routes (relations)
