@@ -66,6 +66,8 @@ function SignUpInfo({ auth }) {
             const res = await fetch(endpoint, options);
             const data = await res.json();
 
+            console.log('DATA', data);
+
             const endpoint2 = `${SERVER}/saveinn_user`;
 
             const body2 = {
