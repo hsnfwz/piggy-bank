@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { Pool } = require('pg');
 
 // const connectionString = 'postgres://postgres:postgres@localhost:5432/saveinn';
