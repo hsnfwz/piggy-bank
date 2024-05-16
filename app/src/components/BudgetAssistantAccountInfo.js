@@ -6,7 +6,7 @@ import { Container, Row, Col, ListGroup, Button, Modal, Form, Navbar } from 'rea
 import saveInnLogo from '../assets/images/saveInnLogo.svg';
 import userIcon from '../assets/images/userAssistantIcon.svg';
 
-const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-server.onrender.com';
 
 function BudgetAssistantAccountInfo({ auth }) {
   const [errorMessage, setErrorMessage] = useState('');

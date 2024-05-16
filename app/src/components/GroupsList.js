@@ -9,7 +9,7 @@ import userAssistantIcon from '../assets/images/userAssistantIcon.svg';
 import membersIcon from '../assets/images/membersIcon.svg';
 import communityIcon from '../assets/images/communityIcon.svg';
 
-const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-server.onrender.com';
 
 function GroupsList({ auth }) {
   const [showAddModal, setShowAddModal] = useState(false);

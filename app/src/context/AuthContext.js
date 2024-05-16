@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 
-const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-server.onrender.com';
 
 export const AuthContext = createContext();
 

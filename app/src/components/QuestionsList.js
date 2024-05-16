@@ -7,7 +7,7 @@ import moment from 'moment';
 import saveInnLogo from '../assets/images/saveInnLogo.svg';
 import questionsIcon from '../assets/images/faqIcon.svg';
 
-const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-server.onrender.com';
 
 function QuestionsList({ auth }) {
   const [showAddModal, setShowAddModal] = useState(false);

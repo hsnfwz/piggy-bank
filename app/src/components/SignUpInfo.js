@@ -5,7 +5,7 @@ import { Container, Row, Col, Navbar, Button, Form } from 'react-bootstrap';
 // images
 import saveInnLogo from '../assets/images/saveInnLogo.svg';
 
-const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-87nw.onrender.com';
+const SERVER = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'https://piggy-bank-server.onrender.com';
 
 function SignUpInfo({ auth }) {
     const [isAssistant, setIsAssistant] = useState(false);
