@@ -45,6 +45,10 @@ app.use(expressSession({
   cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 },
 }));
 
+app.get('/', () => {
+  return { message: 'Welcome to Piggy Bank Server' };
+});
+
 // app - routes (relations)
 app.use('/saveinn_user', saveinnUserRoutes);
 app.use('/budget_member', budgetMemberRoutes);
