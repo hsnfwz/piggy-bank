@@ -255,7 +255,7 @@ function GroupsList({ auth }) {
                     width="100"
                     height="100"
                     className="mx-2"
-                    alt="Save Inn logo"
+                    alt="Piggy Bank logo"
                     />
                   </Col>
                   <Col>

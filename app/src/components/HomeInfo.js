@@ -16,7 +16,7 @@ function HomeInfo() {
             <Row className="d-flex align-items-center px-2" style={{ height: "60vh"}}>
                 <Col className="px-5">
                     <Row className="pb-2">
-                        <h1 style={{fontWeight: "bold"}}>Save more than what you spend. Welcome to the Save Inn!</h1>
+                        <h1 style={{fontWeight: "bold"}}>Save more than what you spend. Welcome to the Piggy Bank!</h1>
                     </Row>
                     <Row className="py-2">
                         <h4 className="text-muted">The ultimate community budget management platform. Let's save together and enjoy more worry-free years!</h4>

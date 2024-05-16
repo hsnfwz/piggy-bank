@@ -23,7 +23,7 @@ function DashboardInfo({ auth }) {
                     width="50"
                     height="50"
                     className="d-inline-block align-top mx-2"
-                    alt="Save Inn logo"/>
+                    alt="Piggy Bank logo"/>
                     My Dashboard</Navbar.Brand>
                 <Nav xs={6}>
                     <Nav.Link href="/account">Account</Nav.Link>
