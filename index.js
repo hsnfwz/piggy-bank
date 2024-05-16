@@ -37,12 +37,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // app - session
+app.set('trust proxy', 1);
 app.use(expressSession({
   store: new pgSession({ pool, createTableIfMissing: true }),
   secret: 'secret',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 },
+  cookie: { maxAge: 14 * 24 * 60 * 60 * 1000, secure: true, sameSite: 'none' },
 }));
 
 app.get('/', (req, res, next) => {
