@@ -1,19 +1,25 @@
 # Piggy Bank
 
-Developed by Hussein Fawaz
+![Piggy Bank](app/src/assets/images/piggy-bank-preview.png)
 
-Published on May 15, 2024
+[Piggy Bank](https://piggy-bank-client.onrender.com/)
 
-# Tech Stack
-React + Node + PostgreSQL
+## Description
+Budget application to help users track and calculate their income and expenses and collaborate with community members and assistants to save money
 
-# Frontend
-To start the react app, make sure you are in the correct directory. Run ```npm install``` to install all dependencies, then run ```npm run start``` to run on localhost ```3000```.
+## Tech Stack
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- React
+- Node
+- Express
+- PostgreSQL
+- Render
 
-# Backend
-To start the node app, make sure you are in the correct directory. Run ```npm install``` to install all dependencies, then run ```npm run dev``` to run on localhost ```5000```.
-
-We followed the MVC framework. All SQL queries are contained in the directory ```/models```. Each relation has its own model. SQL queries were written using ```node-pg```.
-
-# Database
-To start a PostgreSQL database, make sure you are using port ```5432```, user ```postgres```, and password ```postgres```. Then, create a database called ```saveinn```. Run the provided ```db.sql``` file to create all the tables in the database.
+## Contributions
+Designed and built by Hussein Fawaz
+- [Portfolio](https://www.husseinfawaz.ca)
+- [LinkedIn](https://www.linkedin.com/in/hsnfwz)
+- [GitHub](https://www.github.com/hsnfwz)
