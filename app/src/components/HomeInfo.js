@@ -13,13 +13,13 @@ function HomeInfo() {
 
     return (
         <Container fluid className="px-5" style={{height: "100vh", backgroundImage : `url(${backgroundImage})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition:"center"}}>
-            <Row className="d-flex align-items-center px-2" style={{ height: "60vh"}}>
+            <Row className="d-flex align-items-center px-2 gap-4" style={{ height: "60vh"}}>
                 <Col className="px-5">
                     <Row className="pb-2">
-                        <h1 style={{fontWeight: "bold"}}>Save more than what you spend. Welcome to the Piggy Bank!</h1>
+                        <h1 style={{fontWeight: "bold"}}>Welcome to PiggySave!</h1>
                     </Row>
                     <Row className="py-2">
-                        <h4 className="text-muted">The ultimate community budget management platform. Let's save together and enjoy more worry-free years!</h4>
+                        <h4 className="text-muted">The ultimate community budget management platform.</h4>
                     </Row>
                     <Row className="pt-2">
                         <Button type="button" className="saveinn-green-btn" onClick={() => navigate("sign-up", { replace: false })}>Sign Up</Button>

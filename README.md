@@ -1,8 +1,8 @@
-# Piggy Bank
+# PiggySave
 
-![Piggy Bank](app/src/assets/images/piggy-bank-preview.png)
+![PiggySave](app/src/assets/images/piggysave-preview.png)
 
-[Piggy Bank](https://piggy-bank-client.onrender.com/)
+[PiggySave](https://piggysave.onrender.com/)
 
 ## Description
 Budget application to help users track and calculate their income and expenses and collaborate with community members and assistants to save money

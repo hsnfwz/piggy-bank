@@ -30,7 +30,7 @@ function NavbarInfo() {
                 height="50"
                 className="d-inline-block align-top mx-2"
                 alt="Piggy Bank logo"/>
-                { auth.user ? 'Dashboard' : 'Piggy Bank' }
+                { auth.user ? 'Dashboard' : 'PiggySave' }
             </Navbar.Brand>
             {auth.user && (
                 <Nav xs={6}>
